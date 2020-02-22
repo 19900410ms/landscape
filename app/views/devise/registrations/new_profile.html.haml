@@ -1,0 +1,23 @@
+%h2 Profile
+= form_for @profile do |f|
+  = render "devise/shared/error_messages", resource: @profile
+  .field
+    =f.label :citizenship
+    %br/
+    = f.text_field :citizenship
+  .field
+    =f.label :icon
+    %br/
+    = f.text_field :icon
+  .field
+    =f.label :gender
+    %br/
+    = f.text_field :gender
+  .field
+    =f.label :age
+    %br/
+    = f.text_field :age
+  .actions
+    = f.submit "Finish"
+
+=render "devise/shared/links"
