@@ -1,11 +1,17 @@
 .user-profile {
   width: 80%;
   margin: 0 auto;
-  &__box {
+  &__box {  
     display: flex;
     justify-content: space-around;
     &__left {
       .user_icon {
+        border: 1px solid #333;
+        border-radius: 50%;
+        height: 300px;
+        width: 300px;
+        background-position: center;
+        background-size: cover;
       }
       &__nil-icon {
         background: image-url("icon.png");
