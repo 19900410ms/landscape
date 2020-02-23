@@ -36,12 +36,19 @@
               %br
               = profile_form.text_field :age, value: @user.profile.age
           .update-form__btn
-            = f.submit "Update", method: :post
+            = f.submit "Update", method: :post, id: "user_profiles_btn"
 
       - else
-        %ul.user-profile__box__right__list
-          %li.user-profile__box__right__list__revise=@user.nickname
-          %li.user-profile__box__right__list__revise=@user.email
-          %li.user-profile__box__right__list__revise=@user.profile.citizenship
-          %li.user-profile__box__right__list__revise=@user.profile.gender
-          %li.user-profile__box__right__list__revise=@user.profile.age
+        .right-detail
+          .right-detail__box
+            %h1.right-detail__box__title ニックネーム
+            %p.right-detail__box__data= @user.nickname
+          .right-detail__box
+            %h1.right-detail__box__title 国籍
+            %p.right-detail__box__data= @user.profile.citizenship
+          .right-detail__box
+            %h1.right-detail__box__title 性別
+            %p.right-detail__box__data= @user.profile.gender
+          .right-detail__box
+            %h1.right-detail__box__title 年齢
+            %p.right-detail__box__data= @user.profile.age
