@@ -8,4 +8,5 @@ class User < ApplicationRecord
             :email, presence: :true
   validates :email, uniqueness:true
   has_one   :profile
+  has_many  :spots
 end

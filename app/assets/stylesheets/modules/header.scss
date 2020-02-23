@@ -2,6 +2,7 @@
   width: 100%;
   color: black;
   background-color: white;
+  margin: 0 0 40px;
   &__top {
     height: 50px;
     line-height: 50px;
@@ -26,7 +27,7 @@
   &__nav {
     height: 50px;
     width: 100%;
-    margin: 10px 0;
+    margin: 20px 0;
     &__block {
       display: flex;
       justify-content: space-around;
@@ -54,7 +55,7 @@
     position: relative;
     height: 80px;
     width: 80%;
-    margin: 0 auto 20px;
+    margin: 0 auto;
     // background: image-url("dot_pink.gif");
     // background-size: cover;
     border: 1px solid rgb(232, 0,77);

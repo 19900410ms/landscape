@@ -1,0 +1,71 @@
+.user-profile {
+  width: 80%;
+  margin: 0 auto;
+  &__box {
+    display: flex;
+    justify-content: space-around;
+    &__left {
+      .user_icon {
+        margin: 40px 0 0;
+        border: 1px solid #333;
+        border-radius: 50%;
+        height: 300px;
+        width: 300px;
+        background-position: center;
+        background-size: cover;
+      }
+      &__nil-icon {
+        margin: 40px 0 0;
+        background: image-url("icon.png");
+        border: 1px solid #333;
+        border-radius: 50%;
+        height: 300px;
+        width: 300px;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+    &__right {
+      .update-form {
+        color: #333;
+        font-size: 16px;
+        &__field {
+          margin: 10px 0 0;
+          #user_nickname, #user_email, #user_profiles_citizenship, #user_profiles_gender, #user_profiles_age {
+            height: 25px;
+            width: 100%;
+            font-size: 20px;
+            margin: 5px 0 0;
+          }
+          #user_profiles_icon {
+            height: 25px;
+            width: 100%;
+            margin: 5px 0 0;
+          }
+        }
+        &__btn {
+          margin: 10px 0 0;
+          #user_profiles_btn {
+            height: 25px;
+            width: 100%;
+            margin: 5px 0 0;
+          }
+        }
+      }
+      .right-detail {
+        color: #333;
+        margin: 40px 0 0;
+        &__box {
+          margin: 10px 0;
+          &__title {
+            font-size: 16px;
+            margin: 0 0 5px;
+          }
+          &__data {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}

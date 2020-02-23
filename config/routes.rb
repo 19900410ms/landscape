@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   end
   root to: "spots#index"
   resources :spots
+  resources :users, only: [:show, :update]
 end

@@ -1,0 +1,54 @@
+.user-profile
+  .user-profile__box
+    .user-profile__box__left
+      - if @user.profile.icon != nil
+        = image_tag @user.profile.icon.url, class: :user_icon
+      - else
+        .user-profile__box__left__nil-icon
+    
+    .user-profile__box__right
+      - if current_user.id == @user.id
+        = form_with(model: @user, local: true, class: :"update-form") do |f|
+          .update-form__field
+            %label ニックネーム
+            %br
+            = f.text_field :nickname, placeholder: @user.nickname
+          .update-form__field
+            %label メールアドレス
+            %br
+            = f.email_field :email, placeholder: @user.email
+
+          = f.fields_for :profiles do |profile_form|
+            .update-form__field
+              %label 国籍
+              %br
+              = profile_form.text_field :citizenship, value: @user.profile.citizenship
+            .update-form__field
+              %label アイコン
+              %br
+              = profile_form.file_field :icon
+            .update-form__field
+              %label 性別
+              %br
+              = profile_form.text_field :gender, value: @user.profile.gender
+            .update-form__field
+              %label 年齢
+              %br
+              = profile_form.text_field :age, value: @user.profile.age
+          .update-form__btn
+            = f.submit "Update", method: :post, id: "user_profiles_btn"
+
+      - else
+        .right-detail
+          .right-detail__box
+            %h1.right-detail__box__title ニックネーム
+            %p.right-detail__box__data= @user.nickname
+          .right-detail__box
+            %h1.right-detail__box__title 国籍
+            %p.right-detail__box__data= @user.profile.citizenship
+          .right-detail__box
+            %h1.right-detail__box__title 性別
+            %p.right-detail__box__data= @user.profile.gender
+          .right-detail__box
+            %h1.right-detail__box__title 年齢
+            %p.right-detail__box__data= @user.profile.age
