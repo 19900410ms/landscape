@@ -14,7 +14,27 @@
         = link_to root_path, class: :header__top__title do
           %i.fas.fa-globe-asia.header__top__title__icon
           %h1.header__top__title__text LANDSCAPE
+
       .header__nav
-      
+        %ul.header__nav__block
+          %li.header__nav__block__list
+            = link_to "#", class: :header__nav__block__list do
+              %i.fas.fa-globe-asia.header__nav__block__list__icon
+              %p.header__nav__block__list__name サンプル
+          %li.header__nav__block__list
+            = link_to "#", class: :header__nav__block__list do
+              %i.fas.fa-globe-asia.header__nav__block__list__icon
+              %p.header__nav__block__list__name サンプル
+          %li.header__nav__block__list
+            = link_to "#", class: :header__nav__block__list do
+              %i.fas.fa-globe-asia.header__nav__block__list__icon
+              %p.header__nav__block__list__name サンプル
+          %li.header__nav__block__list
+            = link_to "#", class: :header__nav__block__list do
+              %i.fas.fa-globe-asia.header__nav__block__list__icon
+              %p.header__nav__block__list__name サンプル
+
       .header__image
+        %p.header__image__message Welcome to Japan!!
+
     = yield
