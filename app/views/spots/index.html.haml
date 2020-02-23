@@ -1,4 +1,13 @@
-%h1 HELLO WORLD!!
+.spots-index
+  .spots-index__list
+    - 10.times do
+      .spots_box
+        = link_to "#", class: :spots_box__detail do
+          = image_tag "dot_pink.gif", size: "250x170"
+          %p.spots_box__detail__parag 都道府県名
+          %h1.spots_box__detail__title 観光地名
+          %p.spots_box__detail__parag 最寄駅
+    
 
 - if user_signed_in?
   = link_to "Log Out", destroy_user_session_path, method: :delete
