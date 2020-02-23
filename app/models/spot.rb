@@ -4,4 +4,5 @@ class Spot < ApplicationRecord
             :image,
             :division_id,
             :prefecture_id, presence: :true
+  mount_uploader :image, ImageUploader
 end

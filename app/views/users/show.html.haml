@@ -1,0 +1,24 @@
+.user-profile
+  .user-profile__box
+    .user-profile__box__left
+      - if @user.profile.image == nil
+        = image_tag @user.profile.image.url, class: :user_icon
+      - else
+        .user-profile__box__left__nil-icon
+    
+    .user-profile__box__right
+      - if current_user.id == @user.id
+        %ul.user-profile__box__right__list
+          %li.user-profile__box__right__list__detail=@user.nickname
+          %li.user-profile__box__right__list__detail=@user.email
+          %li.user-profile__box__right__list__detail=@user.profile.citizenship
+          %li.user-profile__box__right__list__detail=@user.profile.gender
+          %li.user-profile__box__right__list__detail=@user.profile.age
+
+      - else
+        %ul.user-profile__box__right__list
+          %li.user-profile__box__right__list__revise=@user.nickname
+          %li.user-profile__box__right__list__revise=@user.email
+          %li.user-profile__box__right__list__revise=@user.profile.citizenship
+          %li.user-profile__box__right__list__revise=@user.profile.gender
+          %li.user-profile__box__right__list__revise=@user.profile.age
