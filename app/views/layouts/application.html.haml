@@ -8,4 +8,13 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+
+    .header
+      .header__top
+        = link_to root_path, class: :header__top__title do
+          %i.fas.fa-globe-asia.header__top__title__icon
+          %h1.header__top__title__text LANDSCAPE
+      .header__nav
+      
+      .header__image
     = yield

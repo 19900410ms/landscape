@@ -1,0 +1,25 @@
+.header {
+  width: 100%;
+  color: black;
+  background-color: white;
+  &__top {
+    height: 50px;
+    line-height: 50px;
+    padding: 10px 0;
+    &__title {
+      display: flex;
+      justify-content: center;
+      text-decoration: none;
+      &__icon {
+        font-size: 50px;
+        color: red;
+        margin-right: 10px;
+      }
+      &__text {
+        font-size: 35px;
+        font-family: 'Cherry Swash', cursive;
+        color: black;
+      }
+    }
+  }
+}
