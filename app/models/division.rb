@@ -4,3 +4,4 @@ class Division < ActiveHash::Base
       {id: 4, name: '中部地方'}, {id: 5, name: '近畿地方'}, {id: 6, name: '中国地方'},
       {id: 7, name: '四国地方'}, {id: 8, name: '九州・沖縄地方'}
   ]
+end

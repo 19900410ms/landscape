@@ -7,4 +7,8 @@ class Spot < ApplicationRecord
             :division_id,
             :prefecture_id, presence: :true
   mount_uploader :image, ImageUploader
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :division
+  belongs_to_active_hash :prefecture
 end

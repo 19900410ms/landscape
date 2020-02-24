@@ -1,6 +1,7 @@
 class SpotsController < ApplicationController
 
   def index
+    @spots = Spot.includes(:image).order("created_at DESC")
   end
 
   def show
@@ -18,10 +19,12 @@ class SpotsController < ApplicationController
       redirect_to root_path
     else
       render :new
+      # redirect_to user_path(id: current_user.id)
     end
   end
 
   def edit
+    @spot = Spot.find(params[:id])
   end
 
   def update
