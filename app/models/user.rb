@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :nickname,
             :email, presence: :true
   validates :email, uniqueness:true
-  has_one   :profile
-  has_many  :spots
-  has_many  :images
+  has_one   :profile, dependent: :destroy
+  has_many  :spots,   dependent: :destroy
+  has_many  :images,  dependent: :destroy
 end

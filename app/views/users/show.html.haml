@@ -1,7 +1,7 @@
 .user-profile
   .user-profile__box
     .user-profile__box__left
-      - if @user.profile.icon != nil
+      - if @user.profile.icon?
         = image_tag @user.profile.icon.url, class: :user_icon
       - else
         .user-profile__box__left__nil-icon
