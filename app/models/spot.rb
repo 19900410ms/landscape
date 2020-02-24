@@ -1,5 +1,6 @@
 class Spot < ApplicationRecord
   belongs_to :user
+  has_many   :images
   validates :name,
             :image,
             :division_id,
