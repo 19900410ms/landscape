@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_23_075955) do
+ActiveRecord::Schema.define(version: 2020_02_24_020601) do
+
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "image", null: false
+    t.bigint "spot_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spot_id"], name: "index_images_on_spot_id"
+  end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "citizenship", null: false
-    t.string "icon"
+    t.text "icon"
     t.string "gender", null: false
     t.integer "age", null: false
     t.bigint "user_id"
@@ -25,7 +33,6 @@ ActiveRecord::Schema.define(version: 2020_02_23_075955) do
 
   create_table "spots", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.string "image", null: false
     t.integer "division_id", null: false
     t.integer "prefecture_id", null: false
     t.string "address"
@@ -52,6 +59,7 @@ ActiveRecord::Schema.define(version: 2020_02_23_075955) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "images", "spots"
   add_foreign_key "profiles", "users"
   add_foreign_key "spots", "users"
 end

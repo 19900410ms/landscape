@@ -1,6 +1,13 @@
 .spots-index
   .spots-index__list
-    - 10.times do
+    - @spots.each do |spot|
+      .spots_box
+        = link_to spot_path(id: spot.id), class: :spots_box__detail do
+          = image_tag spot.images[0].image.url, size: "250x170"
+          %p.spots_box__detail__parag=spot.division.name
+          %h1.spots_box__detail__title=spot.prefecture.name
+          %p.spots_box__detail__parag=spot.station
+    - 12.times do
       .spots_box
         = link_to "#", class: :spots_box__detail do
           = image_tag "dot_pink.gif", size: "250x170"

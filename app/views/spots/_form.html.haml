@@ -1,0 +1,34 @@
+= form_with(model: @spot, local: true) do |f|
+  .div
+    %h1.divv 観光スポット
+    = f.text_field :name
+  .div
+    %h1.divv 地方区分
+    = f.collection_select :division_id, Division.all, :id, :name
+  .div
+    %h1.divv 都道府県
+    = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+  .div
+    %h1.divv 住所
+    = f.text_field :address
+  .div
+    %h1.divv 最寄駅
+    = f.text_field :station
+  .div
+    %h1.divv おすすめ季節
+    = f.text_field :recommend_season
+  .div
+    %h1.divv 休業日
+    = f.text_field :close_day
+  .div
+    %h1.divv 紹介コメント
+    = f.text_area :introduction
+  = f.fields_for :images do |image_form|
+    .div
+      %h1.divv title
+      = image_form.file_field :image
+      %input{type: "file", name: 'spot[images_atributes][1][image]'}
+      %input{type: "file", name: 'spot[images_atributes][2][image]'}
+      %input{type: "file", name: 'spot[images_atributes][3][image]'}
+  .btn
+    = f.submit "create"

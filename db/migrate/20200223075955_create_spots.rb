@@ -2,7 +2,6 @@ class CreateSpots < ActiveRecord::Migration[5.2]
   def change
     create_table :spots do |t|
       t.string     :name,           null: false
-      t.string     :image,          null: false
       t.integer    :division_id,    null: false
       t.integer    :prefecture_id,  null: false
       t.string     :address
