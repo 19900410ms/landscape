@@ -7,8 +7,6 @@ class CreateSpots < ActiveRecord::Migration[5.2]
       t.string     :address
       t.string     :station
       t.text       :introduction
-      t.string     :recommend_season
-      t.string     :close_day
       t.references :user,           foreign_key: true
       t.timestamps
     end

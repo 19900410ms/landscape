@@ -10,14 +10,7 @@
         %li.spot-description__left__list__name=@spot.user.nickname
   .spot-description__right
     %h1.spot-description__right__title=@spot.name
-    -# %ul.spot-description__header__right
-    -#   %li.spot-description__header__right__detail="　　地方区分：#{@spot.division.name}"
-    -#   %li.spot-description__header__right__detail="　　都道府県：#{@spot.prefecture.name}"
-    -#   %li.spot-description__header__right__detail="　　　　住所：#{@spot.address}"
-    -#   %li.spot-description__header__right__detail="　　　最寄駅：#{@spot.station}"
-    -#   %li.spot-description__header__right__detail="おすすめ季節：#{@spot.recommend_season}"
-    -#   %li.spot-description__header__right__detail="　　　休業日：#{@spot.close_day}"
-
+    
 .image-show
   .image-show__picture
     .image-show__picture__left
@@ -45,7 +38,30 @@
     .spot-location__detail__box
       .spot-location__detail__box__item 最寄り駅：
       .spot-location__detail__box__content=@spot.station
-    .spot-location__detail__box
-      .spot-location__detail__box__item 休業日：
-      .spot-location__detail__box__content=@spot.recommend_season
-
+  
+.spot-characteristic
+  .spot-characteristic__introduction
+    %h1.spot-characteristic__introduction__title 紹介コメント
+    .spot-characteristic__introduction__message=simple_format @spot.introduction
+  .spot-characteristic__review
+    %h1.spot-characteristic__review__title 来訪者コメント欄
+    .spot-characteristic__review__box
+      - if user_signed_in?
+        = form_with(model: @spot, local: true, class: :"review-form") do |f|
+          .review-form__icon
+            - if current_user.profile.icon?
+              = image_tag current_user.profile.icon.url
+            - else
+              = image_tag "icon.png"
+          .review-form__text
+            = f.text_field :introduction, class: :"review-form__text__input"
+          = f.submit "コメント", class: :"review-form__btn"
+      - 20.times do
+        .review-index
+          .review-index__icon
+            =image_tag "icon.png"
+          .review-index__comment
+            .review-index__comment__name=@spot.user.nickname
+            .review-index__comment__text=@spot.address
+      
+        

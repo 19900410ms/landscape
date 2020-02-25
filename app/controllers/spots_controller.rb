@@ -42,8 +42,6 @@ class SpotsController < ApplicationController
       :address,
       :station,
       :introduction,
-      :recommend_season,
-      :close_day,
       images_attributes: [:id, :image, :spot_id]).merge(user_id: current_user.id)
   end 
 end
