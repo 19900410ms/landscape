@@ -1,5 +1,6 @@
 class Image < ApplicationRecord
-  belongs_to :user
-  belongs_to :spot
-  validates :image, presence: :true
+  belongs_to :spot, optional: true
+  # validates :image, presence: :true
+
+  mount_uploader :image, ImageUploader
 end

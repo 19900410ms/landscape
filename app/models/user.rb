@@ -9,5 +9,4 @@ class User < ApplicationRecord
   validates :email, uniqueness:true
   has_one   :profile, dependent: :destroy
   has_many  :spots,   dependent: :destroy
-  has_many  :images,  dependent: :destroy
 end

@@ -13,18 +13,16 @@
 ActiveRecord::Schema.define(version: 2020_02_24_020601) do
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "image", null: false
-    t.bigint "user_id"
+    t.text "image", null: false
     t.bigint "spot_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["spot_id"], name: "index_images_on_spot_id"
-    t.index ["user_id"], name: "index_images_on_user_id"
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "citizenship", null: false
-    t.string "icon"
+    t.text "icon"
     t.string "gender", null: false
     t.integer "age", null: false
     t.bigint "user_id"
@@ -62,7 +60,6 @@ ActiveRecord::Schema.define(version: 2020_02_24_020601) do
   end
 
   add_foreign_key "images", "spots"
-  add_foreign_key "images", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "spots", "users"
 end

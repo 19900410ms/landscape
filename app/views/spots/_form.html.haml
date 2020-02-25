@@ -19,10 +19,16 @@
     = f.text_field :recommend_season
   .div
     %h1.divv 休業日
-    = f.text_field :closed_day
+    = f.text_field :close_day
+  .div
+    %h1.divv 紹介コメント
+    = f.text_area :introduction
   = f.fields_for :images do |image_form|
     .div
       %h1.divv title
       = image_form.file_field :image
+      %input{type: "file", name: 'spot[images_atributes][1][image]'}
+      %input{type: "file", name: 'spot[images_atributes][2][image]'}
+      %input{type: "file", name: 'spot[images_atributes][3][image]'}
   .btn
     = f.submit "create"
