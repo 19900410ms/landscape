@@ -1,3 +1,23 @@
+.spot-description
+  .spot-description__left
+    = link_to user_path(id: @spot.user.id) do
+      %ul.spot-description__left__list
+        %li.spot-description__left__list__icon
+          - if @spot.user.profile.icon?
+            = image_tag @spot.user.profile.icon.url
+          - else
+            = image_tag icon.png.url
+        %li.spot-description__left__list__name=@spot.user.nickname
+  .spot-description__right
+    %h1.spot-description__right__title=@spot.name
+    -# %ul.spot-description__header__right
+    -#   %li.spot-description__header__right__detail="　　地方区分：#{@spot.division.name}"
+    -#   %li.spot-description__header__right__detail="　　都道府県：#{@spot.prefecture.name}"
+    -#   %li.spot-description__header__right__detail="　　　　住所：#{@spot.address}"
+    -#   %li.spot-description__header__right__detail="　　　最寄駅：#{@spot.station}"
+    -#   %li.spot-description__header__right__detail="おすすめ季節：#{@spot.recommend_season}"
+    -#   %li.spot-description__header__right__detail="　　　休業日：#{@spot.close_day}"
+
 .image-show
   .image-show__picture
     .image-show__picture__left
