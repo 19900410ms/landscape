@@ -6,7 +6,7 @@
           - if @spot.user.profile.icon?
             = image_tag @spot.user.profile.icon.url
           - else
-            = image_tag icon.png.url
+            = image_tag "icon.png"
         %li.spot-description__left__list__name=@spot.user.nickname
   .spot-description__right
     %h1.spot-description__right__title=@spot.name
@@ -34,4 +34,18 @@
         .image-show__picture__right__bottom__block
           = image_tag @spot.images[0].image.url
 
-.spot-show
+.spot-location
+  .spot-location__detail
+    .spot-location__detail__box
+      .spot-location__detail__box__item 都道府県：
+      .spot-location__detail__box__content=@spot.prefecture.name
+    .spot-location__detail__box
+      .spot-location__detail__box__item 詳細住所：
+      .spot-location__detail__box__content=@spot.address
+    .spot-location__detail__box
+      .spot-location__detail__box__item 最寄り駅：
+      .spot-location__detail__box__content=@spot.station
+    .spot-location__detail__box
+      .spot-location__detail__box__item 休業日：
+      .spot-location__detail__box__content=@spot.recommend_season
+
