@@ -1,0 +1,113 @@
+.spot-description {
+  height: 50px;
+  line-height: 50px;
+  width: 80%;
+  color: #333;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-around;
+  &__left {
+    width: 30%;
+    text-align: left;
+    &__list {
+      list-style: none;
+      text-decoration: none;
+      display: flex;
+      &__icon {
+        margin: 0 10px 0 0;
+        img {
+        height: 50px;
+        width: 50px;
+        border: 1px solid #333;
+        border-radius: 50%;
+        background-position: center;
+        background-size: cover;
+        }
+      }
+      &__name {
+        font-size: 18px;
+        color: #333;
+        text-decoration: none;
+      }
+    }
+  }
+  &__right {
+    width: 70%;
+    &__title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-left: 20%;
+    }
+  }
+}
+
+// .location-name {
+//   width: 80%;
+//   color: #333;
+//   margin: 10px auto;
+//   &__title {
+//     font-size: 26px;
+//     text-align: center;
+//   }
+//   &__user {
+//     height: 50px;
+//     line-height: 50px;
+//     font-size: 20px;
+//     list-style-type: none;
+//     display: flex;
+//     justify-content: center;
+//     &__list { 
+//       display: flex;
+//       img {
+//         height: 50px;
+//         width: 50px;
+//         border: 1px solid #333;
+//         border-radius: 50%;
+//         background-position: center;
+//         background-size: cover;
+//       }
+//     }
+//     &__list:last-child {
+//       margin: 0 20px 0 15px;
+//     }
+//     &__country {
+//     }
+//   }
+// }
+
+.image-show {
+  width: 80%;
+  margin: 0 auto;
+  &__picture {
+    width: 100%;
+    display: flex;
+    &__left {
+      height: 450px;
+      width: 50%;
+      img {
+        height: 450px;
+        width: 100%;
+        display: block;
+      }
+    }
+    &__right {
+      height: 450px;
+      width: 50%;
+      &__top, &__bottom {
+        height: 50%;
+        width: 100%;
+        display: flex;
+        &__block {
+          img {
+            height: 100%;
+            width: 100%;
+            display: block;
+          }
+          img:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+}

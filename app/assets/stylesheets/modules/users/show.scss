@@ -6,21 +6,21 @@
     justify-content: space-around;
     &__left {
       .user_icon {
+        height: 300px;
+        width: 300px;
         margin: 40px 0 0;
         border: 1px solid #333;
         border-radius: 50%;
-        height: 300px;
-        width: 300px;
         background-position: center;
         background-size: cover;
       }
       &__nil-icon {
+        height: 300px;
+        width: 300px;
         margin: 40px 0 0;
         background: image-url("icon.png");
         border: 1px solid #333;
         border-radius: 50%;
-        height: 300px;
-        width: 300px;
         background-position: center;
         background-size: cover;
       }
