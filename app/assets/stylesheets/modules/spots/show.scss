@@ -1,0 +1,36 @@
+.image-show {
+  width: 80%;
+  margin: 0 auto;
+  &__picture {
+    width: 100%;
+    display: flex;
+    &__left {
+      height: 450px;
+      width: 50%;
+      img {
+        height: 450px;
+        width: 100%;
+        display: block;
+      }
+    }
+    &__right {
+      height: 450px;
+      width: 50%;
+      &__top, &__bottom {
+        height: 50%;
+        width: 100%;
+        display: flex;
+        &__block {
+          img {
+            height: 100%;
+            width: 100%;
+            display: block;
+          }
+          img:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+}

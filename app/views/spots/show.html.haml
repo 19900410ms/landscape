@@ -1,0 +1,17 @@
+.image-show
+  .image-show__picture
+    .image-show__picture__left
+      = image_tag @spot.images[0].image.url
+    .image-show__picture__right
+      .image-show__picture__right__top
+        .image-show__picture__right__top__block
+          = image_tag @spot.images[0].image.url
+        .image-show__picture__right__top__block
+          = image_tag @spot.images[0].image.url
+      .image-show__picture__right__bottom
+        .image-show__picture__right__bottom__block
+          = image_tag @spot.images[0].image.url
+        .image-show__picture__right__bottom__block
+          = image_tag @spot.images[0].image.url
+
+.spot-show
