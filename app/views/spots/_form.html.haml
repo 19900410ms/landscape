@@ -9,17 +9,11 @@
     %h1.divv 都道府県
     = f.collection_select :prefecture_id, Prefecture.all, :id, :name
   .div
-    %h1.divv 住所
+    %h1.divv 詳細住所
     = f.text_field :address
   .div
-    %h1.divv 最寄駅
+    %h1.divv 最寄り駅
     = f.text_field :station
-  .div
-    %h1.divv おすすめ季節
-    = f.text_field :recommend_season
-  .div
-    %h1.divv 休業日
-    = f.text_field :close_day
   .div
     %h1.divv 紹介コメント
     = f.text_area :introduction

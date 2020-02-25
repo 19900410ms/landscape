@@ -36,44 +36,10 @@
     &__title {
       font-size: 28px;
       font-weight: bold;
-      margin-left: 20%;
+      margin-left: 10%;
     }
   }
 }
-
-// .location-name {
-//   width: 80%;
-//   color: #333;
-//   margin: 10px auto;
-//   &__title {
-//     font-size: 26px;
-//     text-align: center;
-//   }
-//   &__user {
-//     height: 50px;
-//     line-height: 50px;
-//     font-size: 20px;
-//     list-style-type: none;
-//     display: flex;
-//     justify-content: center;
-//     &__list { 
-//       display: flex;
-//       img {
-//         height: 50px;
-//         width: 50px;
-//         border: 1px solid #333;
-//         border-radius: 50%;
-//         background-position: center;
-//         background-size: cover;
-//       }
-//     }
-//     &__list:last-child {
-//       margin: 0 20px 0 15px;
-//     }
-//     &__country {
-//     }
-//   }
-// }
 
 .image-show {
   width: 80%;
@@ -105,6 +71,126 @@
           }
           img:hover {
             opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+}
+
+.spot-location {
+  width: 80%;
+  margin: 20px auto;
+  color: #333;
+  text-align: center;
+  &__detail {
+    line-height: 18px;
+    display: flex;
+    justify-content: space-between;
+    &__box {
+      
+      display: flex;
+      &__item {
+        font-size: 14px;
+        margin: 0 5px 0 0;
+      }
+      &__content {
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.spot-characteristic {
+  height: 350px;
+  width: 80%;
+  margin: 20px auto;
+  color: #333;
+  display: flex;
+  &__introduction {
+    width: 30%;
+    text-align: left;
+    &__title {
+      line-height: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    &__message {
+      height: 330px;
+      overflow: scroll;
+      margin: 10px 0 0 20px;
+    }
+  }
+  &__review {
+    width: 70%;
+    margin: 0 0 0 10px;
+    text-align: left;
+    &__title {
+      line-height: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    &__box {
+      height: 330px;
+      overflow: scroll;
+      margin: 10px 0 0 20px;
+      .review-form {
+        line-height: 40px;
+        display: flex;
+        justify-content: flex-start;
+        &__icon {
+          width: 40px;
+          img {
+            height: 40px;
+            width: 40px;
+            border: 1px solid #333;
+            border-radius: 50%;
+            background-position: center;
+            background-size: cover;
+          }
+        }
+        &__text {
+          margin: 0 10px 0 15px;
+          &__input {
+            height: 35px;
+            width: calc(50vw - 110px);
+          }
+        }
+        &__btn {
+          height: 40px;
+          width: 70px;
+          color: white;
+          background-color: rgb(0, 124, 251);
+          margin: 2px 0 0;
+          border-radius: 5px;
+        }
+      }
+      .review-index {
+        line-height: 40px;
+        display: flex;
+        justify-content: flex-start;
+        &__icon {
+          img {
+            height: 40px;
+            width: 40px;
+            border: 1px solid #333;
+            border-radius: 50%;
+            background-position: center;
+            background-size: cover;
+          }
+        }
+        &__comment {
+          line-height: 40px;
+          &__name {
+            font-size: 12px;
+            line-height: 20px;
+            margin: 0 0 0 15px;
+          }
+          &__text {
+            font-size: 14px;
+            line-height: 20px;
+            margin: 0 0 0 15px;
           }
         }
       }
