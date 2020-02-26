@@ -15,10 +15,4 @@
           %h1.spots_box__detail__title 観光地名
           %p.spots_box__detail__parag 最寄駅
     
-
-- if user_signed_in?
-  = link_to "Log Out", destroy_user_session_path, method: :delete
-  = link_to "My Page", user_path(id: current_user)
-  = link_to "new", new_spot_path
-- else
   = link_to "Log in", new_user_session_path

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_24_020601) do
+ActiveRecord::Schema.define(version: 2020_02_26_131039) do
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "image", null: false
@@ -29,6 +29,16 @@ ActiveRecord::Schema.define(version: 2020_02_24_020601) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "text", null: false
+    t.bigint "user_id"
+    t.bigint "spot_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spot_id"], name: "index_reviews_on_spot_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "spots", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -61,5 +71,7 @@ ActiveRecord::Schema.define(version: 2020_02_24_020601) do
 
   add_foreign_key "images", "spots"
   add_foreign_key "profiles", "users"
+  add_foreign_key "reviews", "spots"
+  add_foreign_key "reviews", "users"
   add_foreign_key "spots", "users"
 end

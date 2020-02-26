@@ -47,16 +47,26 @@
     %h1.spot-characteristic__review__title 来訪者コメント欄
     .spot-characteristic__review__box
       - if user_signed_in?
-        = form_with(model: @spot, local: true, class: :"review-form") do |f|
+        = form_with(model: [@spot, Review.new], local: true, class: :"review-form") do |f|
           .review-form__icon
             - if current_user.profile.icon?
               = image_tag current_user.profile.icon.url
             - else
               = image_tag "icon.png"
           .review-form__text
-            = f.text_field :introduction, class: :"review-form__text__input"
+            = f.text_field :text, class: :"review-form__text__input"
           = f.submit "コメント", class: :"review-form__btn"
-      - 20.times do
+      - @reviews.each do |review|
+        .review-index
+          .review-index__icon
+            - if review.user.profile.icon?
+              = image_tag review.user.profile.icon.url
+            - else
+              = image_tag "icon.png"
+          .review-index__comment
+            .review-index__comment__name=review.user.nickname
+            .review-index__comment__text=review.text
+      - 5.times do
         .review-index
           .review-index__icon
             =image_tag "icon.png"
