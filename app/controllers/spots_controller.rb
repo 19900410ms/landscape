@@ -7,6 +7,8 @@ class SpotsController < ApplicationController
   end
 
   def show
+    @review = Review.new
+    @reviews = @spot.reviews.includes(:user)
   end
 
   def new
