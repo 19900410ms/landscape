@@ -133,7 +133,7 @@
     }
     &__box {
       height: 330px;
-      overflow: scroll;
+      // overflow: scroll;
       margin: 10px 0 0 20px;
       .review-form {
         line-height: 40px;
@@ -166,31 +166,35 @@
           border-radius: 5px;
         }
       }
-      .review-index {
-        line-height: 40px;
-        display: flex;
-        justify-content: flex-start;
-        &__icon {
-          img {
-            height: 40px;
-            width: 40px;
-            border: 1px solid #333;
-            border-radius: 50%;
-            background-position: center;
-            background-size: cover;
-          }
-        }
-        &__comment {
+      .review {
+        height: 270px;
+        overflow: scroll;
+        .review-index {
           line-height: 40px;
-          &__name {
-            font-size: 12px;
-            line-height: 20px;
-            margin: 0 0 0 15px;
+          display: flex;
+          justify-content: flex-start;
+          &__icon {
+            img {
+              height: 40px;
+              width: 40px;
+              border: 1px solid #333;
+              border-radius: 50%;
+              background-position: center;
+              background-size: cover;
+            }
           }
-          &__text {
-            font-size: 14px;
-            line-height: 20px;
-            margin: 0 0 0 15px;
+          &__comment {
+            line-height: 40px;
+            &__name {
+              font-size: 12px;
+              line-height: 20px;
+              margin: 0 0 0 15px;
+            }
+            &__text {
+              font-size: 14px;
+              line-height: 20px;
+              margin: 0 0 0 15px;
+            }
           }
         }
       }
