@@ -14,12 +14,13 @@
     .post-spot__form__top__right
       %h1.post-spot__form__top__right__item 紹介コメント
       = f.text_area :introduction
-  = f.fields_for :images do |image_form|
-    .post-spot__form__block
-      %h1.post-spot__form__block__item 写真
-      = image_form.file_field :image, type: 'file', name: 'spot[images_atributes][][image]'
-      %input{type: "file", name: 'spot[images_atributes][1][image]'}
-      %input{type: "file", name: 'spot[images_atributes][2][image]'}
-      %input{type: "file", name: 'spot[images_atributes][3][image]'}
-  .btn
+  .post-spot__form__bottom
+    %h1.post-spot__form__bottom__item 写真
+    = f.fields_for :images do |image_form|
+      = image_form.file_field :image, type: 'file', name: 'spot[images_atributes][][image]', id: :"img-file"
+      -# %input{type: "file", name: 'spot[images_atributes][1][image]'}
+      -# %input{type: "file", name: 'spot[images_atributes][2][image]'}
+      -# %input{type: "file", name: 'spot[images_atributes][3][image]'}
+    .post-spot__form__bottom__preview
+  .post-spot__form__btn
     = f.submit "create"

@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Landscape
+    %title LANDSCAPE
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -35,7 +35,7 @@
                 %i.fas.fa-globe-asia.header__nav__block__list__icon
                 %p.header__nav__block__list__name Log Out
 
-        -# .header__image
-        -# %p.header__image__message Welcome to Japan!!
+        .header__image
+          %p.header__image__message Welcome to Japan!!
 
     = yield

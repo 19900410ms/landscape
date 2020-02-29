@@ -3,7 +3,11 @@
     - @spots.each do |spot|
       .spots_box
         = link_to spot_path(id: spot.id), class: :spots_box__detail do
-          = image_tag spot.images[0].image.url, size: "250x170"
+          - if spot.images[0].present?
+            = image_tag spot.images[0].image.url, size: "250x170"
+          - else
+            .spots_box__detail__no-image
+              %p.spots_box__detail__no-image__notice No Image
           %p.spots_box__detail__parag=spot.division.name
           %h1.spots_box__detail__title=spot.prefecture.name
           %p.spots_box__detail__parag=spot.station

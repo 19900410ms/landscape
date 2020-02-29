@@ -3,6 +3,7 @@
   margin: 10px auto;
   &__form {
     color: #333;
+    font-size: 16px;
     margin: 20px auto;
     &__top {
       display: flex;
@@ -12,7 +13,6 @@
           margin: 0 0 5px;
         }
         &__item {
-          font-size: 16px;
           margin: 10px 0 5px;
         }
         #spot_name, #spot_address, #spot_station {
@@ -40,6 +40,22 @@
           resize: none;
         }
       }
+    }
+    &__bottom {
+      margin: 10px 0 0;
+      &__item {
+        margin: 0 0 5px;
+      }
+      &__preview {
+        height: 50px;
+        width: 100%;
+        background-color: rgb(255, 211, 211);
+      }
+    }
+    &__btn {
+      display: block;
+      font-size: 16px;
+      margin: 20px auto 0;
     }
   }
 }
