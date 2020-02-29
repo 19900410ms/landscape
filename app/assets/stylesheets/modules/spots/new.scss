@@ -46,10 +46,33 @@
       &__item {
         margin: 0 0 5px;
       }
+      input {
+        font-size: 14px;
+        margin: 5px 0 10px;
+      }
       &__preview {
-        height: 50px;
         width: 100%;
-        background-color: rgb(255, 211, 211);
+        display: flex;
+        justify-content: flex-start;
+        .preview-image {
+          width: 20%;
+          &__box {
+            &__photo {
+              img {
+                height: 150px;
+                width: 100%;
+              }
+            }
+          }
+          &__controll {
+            margin: 5px 0 0;
+            &__delete {
+              font-size: 16px;
+              color: skyblue;
+              cursor: pointer;
+            }
+          }
+        }
       }
     }
     &__btn {
