@@ -14,18 +14,38 @@
 .image-show
   .image-show__picture
     .image-show__picture__left
-      = image_tag @spot.images[0].image.url
+      - if @spot.images[0].present?
+        = image_tag @spot.images[0].image.url
+      - else
+        .image-show__picture__left__no-image
+          %p.image-show__picture__left__no-image__text No Image
     .image-show__picture__right
       .image-show__picture__right__top
-        .image-show__picture__right__top__block
-          = image_tag @spot.images[0].image.url
-        .image-show__picture__right__top__block
-          = image_tag @spot.images[0].image.url
+        - if @spot.images[1].present?
+          .image-show__picture__right__top__block
+            = image_tag @spot.images[1].image.url
+        - else
+          .image-show__picture__right__top__no-image
+            %p.image-show__picture__right__top__no-image__text No Image
+        - if @spot.images[2].present?
+          .image-show__picture__right__top__block
+            = image_tag @spot.images[2].image.url
+        - else
+          .image-show__picture__right__top__no-image
+            %p.image-show__picture__right__top__no-image__text No Image
       .image-show__picture__right__bottom
-        .image-show__picture__right__bottom__block
-          = image_tag @spot.images[0].image.url
-        .image-show__picture__right__bottom__block
-          = image_tag @spot.images[0].image.url
+        - if @spot.images[3].present?
+          .image-show__picture__right__bottom__block
+            = image_tag @spot.images[3].image.url
+        - else
+          .image-show__picture__right__bottom__no-image
+            %p.image-show__picture__right__bottom__no-image__text No Image
+        - if @spot.images[4].present?
+          .image-show__picture__right__bottom__block
+            = image_tag @spot.images[4].image.url
+        - else
+          .image-show__picture__right__bottom__no-image
+            %p.image-show__picture__right__bottom__no-image__text No Image
 
 .spot-location
   .spot-location__detail
@@ -56,22 +76,23 @@
           .review-form__text
             = f.text_field :text, class: :"review-form__text__input"
           = f.submit "コメント", class: :"review-form__btn"
-      - @reviews.each do |review|
-        .review-index
-          .review-index__icon
-            - if review.user.profile.icon?
-              = image_tag review.user.profile.icon.url
-            - else
-              = image_tag "icon.png"
-          .review-index__comment
-            .review-index__comment__name=review.user.nickname
-            .review-index__comment__text=review.text
-      - 5.times do
-        .review-index
-          .review-index__icon
-            =image_tag "icon.png"
-          .review-index__comment
-            .review-index__comment__name=@spot.user.nickname
-            .review-index__comment__text=@spot.address
-      
+      .review
+        - @reviews.each do |review|
+          .review-index
+            .review-index__icon
+              - if review.user.profile.icon?
+                = image_tag review.user.profile.icon.url
+              - else
+                = image_tag "icon.png"
+            .review-index__comment
+              .review-index__comment__name=review.user.nickname
+              .review-index__comment__text=review.text
+        - 5.times do
+          .review-index
+            .review-index__icon
+              =image_tag "icon.png"
+            .review-index__comment
+              .review-index__comment__name=@spot.user.nickname
+              .review-index__comment__text=@spot.address
         
+          

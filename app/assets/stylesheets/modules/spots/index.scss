@@ -16,6 +16,23 @@
         font-weight: bold;
         color: #333;
         text-decoration: none;
+        &__no-image {
+          position: relative;
+          height: 170px;
+          width: 250px;
+          background-color: rgb(170, 170, 170);
+          &__notice {
+            position: absolute;
+            color: #333;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+          }
+        }
         &__parag {
           margin: 10px 0 0;
         }

@@ -18,7 +18,6 @@
         img {
         height: 50px;
         width: 50px;
-        border: 1px solid #333;
         border-radius: 50%;
         background-position: center;
         background-size: cover;
@@ -55,6 +54,24 @@
         width: 100%;
         display: block;
       }
+      &__no-image {
+        position: relative;
+        height: 450px;
+        width: 100%;
+        background-color: rgb(170, 170, 170);
+        &__text {
+          position: absolute;
+          color: #333;
+          font-size: 28px;
+          font-weight: bold;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+        }
+      }
     }
     &__right {
       height: 450px;
@@ -72,6 +89,24 @@
           img:hover {
             opacity: 0.5;
           }
+        }
+        &__no-image {
+          position: relative;
+          height: 99%;
+          width: 99%;
+          border: white solid 1px;
+          background-color: rgb(170, 170, 170);
+          &__text {
+            position: absolute;
+            color: #333;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+          } 
         }
       }
     }
@@ -133,7 +168,7 @@
     }
     &__box {
       height: 330px;
-      overflow: scroll;
+      // overflow: scroll;
       margin: 10px 0 0 20px;
       .review-form {
         line-height: 40px;
@@ -166,31 +201,35 @@
           border-radius: 5px;
         }
       }
-      .review-index {
-        line-height: 40px;
-        display: flex;
-        justify-content: flex-start;
-        &__icon {
-          img {
-            height: 40px;
-            width: 40px;
-            border: 1px solid #333;
-            border-radius: 50%;
-            background-position: center;
-            background-size: cover;
-          }
-        }
-        &__comment {
+      .review {
+        height: 270px;
+        overflow: scroll;
+        .review-index {
           line-height: 40px;
-          &__name {
-            font-size: 12px;
-            line-height: 20px;
-            margin: 0 0 0 15px;
+          display: flex;
+          justify-content: flex-start;
+          &__icon {
+            img {
+              height: 40px;
+              width: 40px;
+              border: 1px solid #333;
+              border-radius: 50%;
+              background-position: center;
+              background-size: cover;
+            }
           }
-          &__text {
-            font-size: 14px;
-            line-height: 20px;
-            margin: 0 0 0 15px;
+          &__comment {
+            line-height: 40px;
+            &__name {
+              font-size: 12px;
+              line-height: 20px;
+              margin: 0 0 0 15px;
+            }
+            &__text {
+              font-size: 14px;
+              line-height: 20px;
+              margin: 0 0 0 15px;
+            }
           }
         }
       }
