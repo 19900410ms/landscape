@@ -2,7 +2,11 @@ class ReviewsController < ApplicationController
 
   def create
     review = Review.create(review_params)
-    redirect_to spot_path(review.spot.id), notice: 'コメントしました'
+    redirect_to spot_path(review.spot.id)
+    # respond_to do |format|
+    #   #format.html { redirect_to spot_path(review.spot.id) }
+    #   format.json
+    # end
   end
 
   private

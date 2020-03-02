@@ -1,0 +1,19 @@
+.log-in {
+  width: 80%;
+  margin: 0px auto;
+  &__title {
+    color: #333;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 auto 20px;
+  }
+  .new_user {
+    margin: 0 auto;
+    .field {
+      margin: 10px 0;
+      #user_email, #user_password {
+        margin: 5px 0 0;
+      }
+    }
+  }
+}
