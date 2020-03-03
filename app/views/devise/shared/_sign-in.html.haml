@@ -1,18 +1,17 @@
-.log-in
-  .log-in__box
-    %h1.log-in__box__title Log in
-    = form_with model: @user, url: user_session_path, class: :"login-form", local: true do |f|
-      .login-form__field
-        = f.label :email, class: :"login-form__field__label"
-        -# %br/
-        = f.email_field :email, autofocus: true, autocomplete: "email"
-      .login-form__field
-        = f.label :password, class: :"login-form__field__label"
-        -# %br/
-        = f.password_field :password, autocomplete: "current-password"
-      .login-form__field
-        = f.check_box :remember_me
-        = f.label :remember_me
-      .actions
-        = f.submit "Log in"
-    -# = render "devise/shared/links"
+.log-in-background
+  .log-in
+    .log-in__box
+      %h1.log-in__box__title ログインフォーム
+      = form_with model: @user, url: user_session_path, class: :"login-form", local: true do |f|
+        .login-form__field
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: :"メールアドレス"
+        .login-form__field
+          = f.password_field :password, autocomplete: "current-password", placeholder: :"パスワード"
+        .login-form__field
+          = f.check_box :remember_me
+          = f.label :remember_me, class: :"login-form__field__remenber"
+        .login-form__action
+          = f.submit "Log in", class: :"login-form__action__btn"
+      -# = render "devise/shared/links"
+      .log-in__box__close
+        %p.log-in__box__close__btn 閉じる
