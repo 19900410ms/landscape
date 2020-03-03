@@ -1,0 +1,18 @@
+.sing-up-background
+  .sing-up
+    .sing-up__box
+      .sing-up__box__title 新規登録フォーム
+      = form_with model: @user, url: user_registration_path, class: "sign-up-form", local: true do |f|
+        .sign-up-form__field
+          = f.text_field :nickname, autofocus: true, name: "user[nickname]", placeholder: :"ニックネーム"
+        .sign-up-form__field
+          = f.email_field :email, autofocus: true, autocomplete: "email", name: "user[email]", placeholder: :"メールアドレス"
+        .sign-up-form__field
+          = f.password_field :password, autocomplete: "current-password", name: "user[password]", placeholder: :"パスワード"
+        .sign-up-form__field
+          = f.password_field :password_confirmation, autocomplete: "new-password", name: "user[password_confirmation]", placeholder: :"パスワード確認"
+        .sign-up-form__action
+          = f.submit "Sign up", class: "sign-up-form__action__btn"
+      -# = render "devise/shared/links"
+      .sign-up__box__close
+        %p.log-in__box__close__btn 閉じる
