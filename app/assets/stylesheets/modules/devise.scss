@@ -10,7 +10,8 @@
   display: none;
   .log-in, .sing-up {
     z-index: 2;
-    height: 310px;
+    // height: 310px;
+    height: auto;
     width: 80%;
     max-width: 500px;
     color: #333;
@@ -33,7 +34,7 @@
         display: block;
         &__field {
           margin: 15px;
-          #email, #password, #nickname, #password_confirmation {
+          #nickname, #email, #password, #password_confirmation, #user_nickname, #user_email, #user_password, #user_password_confirmation {
             height: 40px;
             width: 90%;
             font-size: 18px;
@@ -80,8 +81,5 @@
         }
       }
     }
-  }
-  .sing-up {
-    height: 398px;
   }
 }

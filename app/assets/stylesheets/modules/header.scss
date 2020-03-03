@@ -47,9 +47,9 @@
           color: #333;
           margin: 5px 0 0;
         }
-      }
-      .modal-show {
-        cursor: pointer;
+        .log-in-modal, .sign-up-modal {
+          cursor: pointer;
+        }
       }
     }
   }

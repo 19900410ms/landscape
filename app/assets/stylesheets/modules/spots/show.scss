@@ -32,10 +32,25 @@
   }
   &__right {
     width: 70%;
+    display: flex;
+    justify-content: space-between;
     &__title {
       font-size: 28px;
       font-weight: bold;
       margin-left: 10%;
+    }
+    &__list {
+      font-size: 24px;
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+      .edit-btn {
+        color: #333;
+        margin: 0 10px 0 0;
+      }
+      .delete-btn {
+        color: #333;
+      }
     }
   }
 }

@@ -10,7 +10,15 @@
         %li.spot-description__left__list__name=@spot.user.nickname
   .spot-description__right
     %h1.spot-description__right__title=@spot.name
-    
+    - if  user_signed_in? && @spot.user.id == current_user.id
+      %ul.spot-description__right__list
+        %li
+          = link_to edit_spot_path(@spot), class: "edit-btn" do
+            %i.far.fa-edit
+        %li
+          = link_to spot_path(@spot), method: :delete, class: "delete-btn", data: {confirm: "投稿を削除しますか？"} do
+            %i.far.fa-trash-alt
+  
 .image-show
   .image-show__picture
     .image-show__picture__left
