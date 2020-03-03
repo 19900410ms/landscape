@@ -8,7 +8,7 @@ class SpotsController < ApplicationController
 
   def show
     @review = Review.new
-    @reviews = @spot.reviews.includes(:user)
+    @reviews = @spot.reviews.includes(:user).order("created_at DESC")
   end
 
   def new
