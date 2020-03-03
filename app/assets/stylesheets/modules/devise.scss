@@ -1,4 +1,4 @@
-.log-in-background {
+.log-in-background, .sing-up-background {
   position: fixed;
   top: 0;
   right: 0;
@@ -8,9 +8,9 @@
   z-index: 100;
   text-align: center;
   display: none;
-  .log-in {
+  .log-in, .sing-up {
     z-index: 2;
-    height: 308px;
+    height: 310px;
     width: 80%;
     max-width: 500px;
     color: #333;
@@ -25,16 +25,15 @@
       text-align: center;
       padding: 10px;
       border: 2px solid #eee;
-      border-radius: 5px;
       &__title {
         font-size: 22px;
         margin: 20px 0;
       }
-      .login-form {
+      .login-form, .sign-up-form {
         display: block;
         &__field {
           margin: 15px;
-          #email, #password {
+          #email, #password, #nickname, #password_confirmation {
             height: 40px;
             width: 90%;
             font-size: 18px;
@@ -81,5 +80,8 @@
         }
       }
     }
+  }
+  .sing-up {
+    height: 398px;
   }
 }
