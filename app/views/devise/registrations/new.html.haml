@@ -1,6 +1,6 @@
 %h2 新規登録フォーム
 = form_for(@user, url: user_registration_path) do |f|
-  = render "devise/shared/error_messages", resource: @user
+  = render "devise/shared/error_messages", resource: @user 
   .field
     = f.label :nickname
     %br/

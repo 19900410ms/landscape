@@ -1,4 +1,4 @@
-.log-in-background, .sing-up-background {
+.log-in-background, .sing-up-background, .profile-background {
   position: fixed;
   top: 0;
   right: 0;
@@ -8,7 +8,7 @@
   z-index: 100;
   text-align: center;
   display: none;
-  .log-in, .sing-up {
+  .log-in, .sing-up, .proflie {
     z-index: 2;
     // height: 310px;
     height: auto;
@@ -30,7 +30,7 @@
         font-size: 22px;
         margin: 20px 0;
       }
-      .login-form, .sign-up-form {
+      .login-form, .sign-up-form, .profile-form {
         display: block;
         &__field {
           margin: 15px;
@@ -43,6 +43,16 @@
           }
           &__remenber {
             color: #333;
+          }
+          #profile_citizenship, #profile_gender, #profile_age {
+            height: 40px;
+            width: 90%;
+            font-size: 18px;
+            border: 1px solid #eee;
+            border-radius: 3px;
+          }
+          &__title {
+            margin: 0 0 10px;
           }
         }
         &__action {
@@ -63,7 +73,6 @@
           &__btn:hover {
             color: white;
             background-color: rgb(221, 53, 69);
-            padding: 5px;
           }
         }
       }
@@ -75,6 +84,7 @@
           margin: 0 auto;
           cursor: pointer;
           transition: .7s;
+          text-decoration: none;
         }
         &__btn:hover {
           color: rgb(0, 124, 251);

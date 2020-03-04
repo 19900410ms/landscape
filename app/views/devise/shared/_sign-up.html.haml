@@ -3,6 +3,7 @@
     .sing-up__box
       .sing-up__box__title 新規登録フォーム
       = form_with model: @user, url: user_registration_path, class: "sign-up-form", local: true do |f|
+        -# = render "devise/shared/error_messages", resource: @user
         .sign-up-form__field
           = f.text_field :nickname, autofocus: true, name: "user[nickname]", placeholder: :"ニックネーム"
         .sign-up-form__field

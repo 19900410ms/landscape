@@ -3,6 +3,7 @@
     .log-in__box
       %h1.log-in__box__title ログインフォーム
       = form_with model: @user, url: user_session_path, class: "login-form", local: true do |f|
+        -# = render "devise/shared/error_messages", resource: @user
         .login-form__field
           = f.email_field :email, autofocus: true, autocomplete: "email", name: "user[email]", placeholder: :"メールアドレス"
         .login-form__field

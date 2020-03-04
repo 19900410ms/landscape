@@ -1,21 +1,23 @@
-%h2 Profile
-= form_for @profile do |f|
-  = render "devise/shared/error_messages", resource: @profile
-  .field
-    =f.label :citizenship
-    %br/
-    = f.text_field :citizenship
-  .field
-    =f.label :icon
-    %br/
-    = f.file_field :icon
-  .field
-    =f.label :gender
-    %br/
-    = f.text_field :gender
-  .field
-    =f.label :age
-    %br/
-    = f.text_field :age
-  .actions
-    = f.submit "Finish"
+.profile-background
+  .proflie
+    .proflie__box
+      %h1.proflie__box__title Profile
+      = form_with model: @profile, class: "profile-form", local: true do |f|
+        = render "devise/shared/error_messages", resource: @profile
+        .profile-form__field
+          .profile-form__field__title Citizenship
+          = f.text_field :citizenship
+        .profile-form__field
+          .profile-form__field__title Icon
+          = f.file_field :icon
+        .profile-form__field
+          .profile-form__field__title Gender
+          = f.text_field :gender
+        .profile-form__field
+          .profile-form__field__title Age
+          = f.text_field :age
+        .profile-form__action
+          = f.submit "Register", class: "profile-form__action__btn"
+      .log-in__box__close
+        -# %p.log-in__box__close__btn
+        = link_to "戻る", spots_path, class: "log-in__box__close__btn"
