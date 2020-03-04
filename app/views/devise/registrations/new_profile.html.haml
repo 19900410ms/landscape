@@ -5,10 +5,10 @@
     =f.label :citizenship
     %br/
     = f.text_field :citizenship
-  -# .field
-  -#   =f.label :icon
-  -#   %br/
-  -#   = f.file_field :icon
+  .field
+    =f.label :icon
+    %br/
+    = f.file_field :icon
   .field
     =f.label :gender
     %br/
@@ -19,5 +19,3 @@
     = f.text_field :age
   .actions
     = f.submit "Finish"
-
-=render "devise/shared/links"
