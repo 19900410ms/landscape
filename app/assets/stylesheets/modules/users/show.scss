@@ -32,7 +32,7 @@
         &__field {
           margin: 10px 0 0;
           #user_nickname, #user_email, #user_profiles_citizenship, #user_profiles_gender, #user_profiles_age {
-            height: 25px;
+            height: 22px;
             width: 100%;
             font-size: 20px;
             margin: 5px 0 0;
@@ -44,11 +44,19 @@
           }
         }
         &__btn {
-          margin: 10px 0 0;
-          #user_profiles_btn {
-            height: 25px;
+          margin: 20px 0;
+          &__submit {
+            height: 30px;
             width: 100%;
-            margin: 5px 0 0;
+            color: rgb(255, 193, 44);
+            font-size: 16px;
+            border: 1px solid orange;
+            border-radius: 5px;
+            transition: .7s;
+          }
+          &__submit:hover {
+            color: white;
+            background-color: rgb(255, 193, 44);
           }
         }
       }

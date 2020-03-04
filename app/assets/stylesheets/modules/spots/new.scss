@@ -76,9 +76,21 @@
       }
     }
     &__btn {
-      display: block;
-      font-size: 16px;
-      margin: 20px auto 0;
+      margin: 10px 0;
+      &__submit {
+        height: 30px;
+        width: 80px;
+        color: rgb(17, 162,183);
+        font-size: 18px;
+        border: 1px solid rgb(17, 162,183);
+        border-radius: 5px;
+        display: block;
+        transition: .7s;
+      }
+      &__submit:hover {
+        color: white;
+        background-color: rgb(17, 162,183);
+      }
     }
   }
 }

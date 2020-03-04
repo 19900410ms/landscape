@@ -36,7 +36,7 @@
               %br
               = profile_form.text_field :age, value: @user.profile.age
           .update-form__btn
-            = f.submit "Update", method: :post, id: "user_profiles_btn"
+            = f.submit "Update", method: :post, class: "update-form__btn__submit"
 
       - else
         .right-detail

@@ -24,4 +24,7 @@
     .post-spot__form__bottom__preview
       .image-inline
   .post-spot__form__btn
-    = f.submit "create"
+    - if controller.action_name == "new"
+      = f.submit "create", class: "post-spot__form__btn__submit"
+    - elsif controller.action_name == "edit"
+      = f.submit "update", class: "post-spot__form__btn__submit"
