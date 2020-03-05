@@ -37,17 +37,14 @@
                 %i.fas.fa-globe-asia.header__nav__block__list__icon
                 %p.header__nav__block__list__name Log Out
           - else
-            %li.header__nav__block__list
+            = link_to new_user_session_path, class: :header__nav__block__list do
               %i.fas.fa-globe-asia.header__nav__block__list__icon.log-in-modal
               %p.header__nav__block__list__name.log-in-modal Sign in
-            %li.header__nav__block__list
-              %i.fas.fa-globe-asia.header__nav__block__list__icon.sign-up-modal
-              %p.header__nav__block__list__name.sign-up-modal Sign up
+            = link_to new_user_registration_path, class: :header__nav__block__list do
+              %i.fas.fa-globe-asia.header__nav__block__list__icon
+              %p.header__nav__block__list__name Sign up
 
       .header__image
         %p.header__image__message Welcome to Japan!!
       
-      = render "devise/shared/sign-in"
-      = render "devise/shared/sign-up"
-
     = yield

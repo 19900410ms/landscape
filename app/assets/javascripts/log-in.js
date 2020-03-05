@@ -1,11 +1,19 @@
-$(function() {
-  $('.log-in-modal').on('click', function(e){
-    e.preventDefault();
-    $('.log-in-background').fadeIn();
-  });
+$(window).load(function () {
+  $('.log-in-background').fadeIn();
 
   $('.log-in__box__close__btn').on('click', function(e){
     e.preventDefault();
     $('.log-in-background').fadeOut();
   });
 });
+// $(function() {
+//   $('.log-in-modal').on('click', function(e){
+//     e.preventDefault();
+//     $('.log-in-background').fadeIn();
+//   });
+
+//   $('.log-in__box__close__btn').on('click', function(e){
+//     e.preventDefault();
+//     $('.log-in-background').fadeOut();
+//   });
+// });
