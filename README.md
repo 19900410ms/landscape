@@ -1,9 +1,6 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Landscape
 
 ## アプリケーション概要
 
 ### 開発環境
-Ruby / Ruby on Rails / Heroku / Docker / CircleCI(導入予定)
+Ruby / Ruby on Rails / S3 / Heroku / Docker / CircleCI(導入予定)

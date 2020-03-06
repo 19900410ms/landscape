@@ -81,6 +81,7 @@
         font-size: 14px;
         &__btn {
           width: 50px;
+          color: #333;
           margin: 0 auto;
           cursor: pointer;
           transition: .7s;
@@ -92,4 +93,15 @@
       }
     }
   }
+}
+.profile__box__close__btn {
+  width: 50px;
+  color: #333;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: .7s;
+  text-decoration: none;
+}
+.profile__box__close__btn:hover {
+  color: rgb(0, 124, 251);
 }
