@@ -5,10 +5,11 @@
     display: flex;
     justify-content: space-around;
     &__left {
+      width: 50%;
+      text-align: center;
       .user_icon {
         height: 300px;
         width: 300px;
-        margin: 40px 0 0;
         border: 1px solid #333;
         border-radius: 50%;
         background-position: center;
@@ -17,7 +18,6 @@
       &__nil-icon {
         height: 300px;
         width: 300px;
-        margin: 40px 0 0;
         background: image-url("icon.png");
         border: 1px solid #333;
         border-radius: 50%;
@@ -26,14 +26,15 @@
       }
     }
     &__right {
+      width: 50%;
       .update-form {
         color: #333;
         font-size: 16px;
         &__field {
-          margin: 10px 0 0;
+          margin: 10px 0 0 30p;
           #user_nickname, #user_email, #user_profiles_citizenship, #user_profiles_gender, #user_profiles_age {
             height: 22px;
-            width: 100%;
+            width: 80%;
             font-size: 20px;
             margin: 5px 0 0;
           }
@@ -47,7 +48,7 @@
           margin: 20px 0;
           &__submit {
             height: 30px;
-            width: 100%;
+            width: 80%;
             color: rgb(255, 193, 44);
             font-size: 16px;
             border: 1px solid orange;
@@ -61,15 +62,15 @@
         }
       }
       .right-detail {
-        color: #333;
-        margin: 40px 0 0;
         &__box {
-          margin: 10px 0;
+          margin: 20px 0 0 30px;
           &__title {
+            color: #333;
             font-size: 16px;
-            margin: 0 0 5px;
+            margin: 0 0 10px;
           }
           &__data {
+            color: black;
             font-size: 20px;
           }
         }

@@ -48,8 +48,6 @@ ActiveRecord::Schema.define(version: 2020_02_26_131039) do
     t.string "address"
     t.string "station"
     t.text "introduction"
-    t.string "recommend_season"
-    t.string "close_day"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

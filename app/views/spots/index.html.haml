@@ -4,7 +4,7 @@
       .spots_box
         = link_to spot_path(id: spot.id), class: "spots_box__detail" do
           - if spot.images[0].present?
-            = image_tag spot.images[0].image.url, size: "250x170"
+            = image_tag spot.images[0].image.url
           - else
             .spots_box__detail__no-image
               %p.spots_box__detail__no-image__notice No Image
