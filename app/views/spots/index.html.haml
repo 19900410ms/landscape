@@ -2,7 +2,7 @@
   .spots-index__list
     - @spots.each do |spot|
       .spots_box
-        = link_to spot_path(id: spot.id), class: :spots_box__detail do
+        = link_to spot_path(id: spot.id), class: "spots_box__detail" do
           - if spot.images[0].present?
             = image_tag spot.images[0].image.url, size: "250x170"
           - else
@@ -13,7 +13,7 @@
           %p.spots_box__detail__parag=spot.station
     - 2.times do
       .spots_box
-        = link_to "#", class: :spots_box__detail do
+        = link_to "#", class: "spots_box__detail" do
           = image_tag "dot_pink.gif", size: "250x170"
           %p.spots_box__detail__parag 都道府県名
           %h1.spots_box__detail__title 観光地名

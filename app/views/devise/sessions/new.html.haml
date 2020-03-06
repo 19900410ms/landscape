@@ -1,18 +1,18 @@
-.log-in 
-  %h1.log-in__title Log in
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .field
-      = f.label :email
-      %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email"
-    .field
-      = f.label :password
-      %br/
-      = f.password_field :password, autocomplete: "current-password"
-    - if devise_mapping.rememberable?
-      .field
-        = f.check_box :remember_me
-        = f.label :remember_me
-    .actions
-      = f.submit "Log in"
-  = render "devise/shared/links"
+.log-in-background
+  .log-in
+    .log-in__box
+      %h1.log-in__box__title ログインフォーム
+      = form_with model: @user, url: user_session_path, class: "login-form", local: true do |f|
+        -# = render "devise/shared/error_messages", resource: @user
+        .login-form__field
+          = f.email_field :email, autofocus: true, autocomplete: "email", name: "user[email]", placeholder: :"メールアドレス"
+        .login-form__field
+          = f.password_field :password, autocomplete: "current-password", name: "user[password]", placeholder: :"パスワード"
+        .login-form__field
+          = f.check_box :remember_me
+          = f.label :remember_me, class: "login-form__field__remenber"
+        .login-form__action
+          = f.submit "Log in", class: "login-form__action__btn"
+      -# = render "devise/shared/links"
+      .log-in__box__close
+        %p.log-in__box__close__btn 閉じる
