@@ -43,6 +43,13 @@ describe Spot do
       expect(spot).to be_valid
     end
 
+    #外部キー(user)がなければ記事は無効。
+    it "is invalid without user_id" do
+      spot = build(:review, user_id: nil)
+      spot.valid?
+      expect(spot.errors[:user_id]).to include("can't be blank")
+    end
+
   end
 
 end

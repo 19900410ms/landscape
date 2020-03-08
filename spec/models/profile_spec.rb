@@ -31,6 +31,13 @@ describe Profile do
       expect(profile.errors[:age]).to include("can't be blank")
     end
 
+    #外部キー(user)がなければ記事は無効。
+    it "is invalid without user_id" do
+      profile = build(:profile, user_id: nil)
+      profile.valid?
+      expect(profile.errors[:user_id]).to include("can't be blank")
+    end
+
   end
 
 end

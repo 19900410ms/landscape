@@ -39,6 +39,13 @@ describe User do
       expect(user.errors[:password_confirmation]).to include("doesn't match Password")
     end
 
+    #passwordが入力済みでもpassword_confirmationが一致しなければ登録不可
+    it "is invalid if password_confirmation does not match even if password has been entered" do
+      user = build(:user, password_confirmation: "654321")
+      user.valid?
+      expect(user.errors[:password_confirmation]).to include("doesn't match Password")
+    end
+
   end
 
 end
