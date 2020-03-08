@@ -1,11 +1,15 @@
 class ReviewsController < ApplicationController
 
   def create
-    review = Review.create(review_params)
-    # redirect_to spot_path(review.spot.id)
-    respond_to do |format|
-      format.html { redirect_to spot_path(review.spot.id) }
-      format.json
+    if user_signed_in?
+      review = Review.create(review_params)
+      # redirect_to spot_path(review.spot.id)
+      respond_to do |format|
+        format.html { redirect_to spot_path(review.spot.id) }
+        format.json
+      end
+    else
+      redirect_to root_path
     end
   end
 
