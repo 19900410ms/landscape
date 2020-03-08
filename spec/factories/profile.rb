@@ -5,6 +5,7 @@ FactoryBot.define do
     icon         {""}
     gender       {"man"}
     age          {"30"}
+    user_id      {"1"}
   end
 
 end

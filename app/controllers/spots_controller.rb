@@ -1,6 +1,7 @@
 class SpotsController < ApplicationController
 
   before_action :set_params, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @spots = Spot.includes(:images).order("created_at DESC")
@@ -61,4 +62,9 @@ class SpotsController < ApplicationController
   def set_params
     @spot = Spot.find(params[:id])
   end
+
+  def move_to_index
+    redirect_to root_path unless user_signed_in?
+  end
+  
 end

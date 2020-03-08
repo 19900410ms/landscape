@@ -3,6 +3,7 @@ class Profile < ApplicationRecord
   validates :citizenship,
             # :icon,
             :gender,
-            :age,   presence: true
+            :age,
+            :user_id,     presence: true
   mount_uploader :icon, ImageUploader
 end

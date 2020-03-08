@@ -4,6 +4,12 @@ describe User do
 
   describe '#create' do
 
+    #ニックネーム、メールアドレス、passwordとpassword_confirmationが存在すれば登録できること
+    it "is valid with a nickname, email, password, password_confirmation" do
+      user = build(:user)
+      expect(user).to be_valid
+    end
+
     #ニックネームが空白では登録不可
     it "is invalid without a nickname" do
       user = build(:user, nickname: nil)
@@ -29,6 +35,13 @@ describe User do
     #passwordが入力済みでもpassword_confirmationが空白では登録不可
     it "is invalid without a password_confirmation although with a password" do
       user = build(:user, password_confirmation: "")
+      user.valid?
+      expect(user.errors[:password_confirmation]).to include("doesn't match Password")
+    end
+
+    #passwordが入力済みでもpassword_confirmationが一致しなければ登録不可
+    it "is invalid if password_confirmation does not match even if password has been entered" do
+      user = build(:user, password_confirmation: "654321")
       user.valid?
       expect(user.errors[:password_confirmation]).to include("doesn't match Password")
     end
