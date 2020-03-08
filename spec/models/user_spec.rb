@@ -4,6 +4,12 @@ describe User do
 
   describe '#create' do
 
+    #ニックネーム、メールアドレス、passwordとpassword_confirmationが存在すれば登録できること
+    it "is valid with a nickname, email, password, password_confirmation" do
+      user = build(:user)
+      expect(user).to be_valid
+    end
+
     #ニックネームが空白では登録不可
     it "is invalid without a nickname" do
       user = build(:user, nickname: nil)
