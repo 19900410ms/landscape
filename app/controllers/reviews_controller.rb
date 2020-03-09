@@ -1,13 +1,14 @@
 class ReviewsController < ApplicationController
 
+  def show
+    @spot = Spot.find(params[:id])
+    @reviews = Review.all.order("created_at DESC")
+  end
+
   def create
     if user_signed_in?
       review = Review.create(review_params)
-      # redirect_to spot_path(review.spot.id)
-      respond_to do |format|
-        format.html { redirect_to spot_path(review.spot.id) }
-        format.json
-      end
+      redirect_to spot_path(review.spot.id)
     else
       redirect_to root_path
     end
