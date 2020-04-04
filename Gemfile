@@ -8,6 +8,8 @@ gem 'rails', '~> 5.2.2'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0', groups: %w(test development), require: false
 gem 'pg', '~> 0.19.0', group: :production, require: false
+gem 'rails_12factor', '0.0.2', group: :production
+gem 'fog-aws', group: :production
 # Use Puma as the app server
 gem 'puma', '~> 3.12'
 # Use SCSS for stylesheets
@@ -76,5 +78,4 @@ gem 'jquery-rails'
 gem 'active_hash'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'fog-aws'
 gem 'jquery-turbolinks'
