@@ -14,7 +14,7 @@ CarrierWave.configure do |config|
       region:                ENV["AWS_S3_REGION"]
     }
 
-    config.fog_directory  = '19900410ms'
+    config.fog_directory  =  ENV['AWS_S3_BUCKET']
     config.asset_host =     'https://s3-ap-northeast-1.amazonaws.com/19900410ms'
   end
 end
