@@ -11,7 +11,7 @@ gem 'pg', '~> 0.19.0', group: :production, require: false
 gem 'rails_12factor', '0.0.2', group: :production
 gem 'fog-aws', group: :production
 # Use Puma as the app server
-gem 'puma', '~> 3.12'
+gem 'puma', '~> 4.3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
